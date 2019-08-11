@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dices</title>
+	<style type="text/css">
+	.dices{
+		/*background-color: red;*/
+		display: inline;
+		padding: 2rem;
+
+	}
+	.invalid { border-color: red; }
+     #error { color: red }
+	.row{
+		display: inline;
+	}
+	ul li{
+		display: inline;
+		color: white;
+	}
+	ul{
+		list-style-type: circle;
+		color: white;
+	}
+	body{
+		background-color: black;
+	}
+	.error{
+		border:2px solid red;
+	}
+
+		
+	</style>
+	
+</head>
+<body>
+
+	<h1>Dice game</h1>
+	<div class="dices">
+		
+			<ul><li></li><li>1</li><li>1</li></ul>
+			<ul><li>2</li><li>2</li><li>2</li></ul>
+			<ul><li>3</li><li>3</li><li>3</li></ul>
+		
+	</div>
+	<div class="dices">
+		
+			<ul><li></li><li></li><li></li></ul>
+			<ul><li></li><li></li><li></li></ul>
+			<ul><li></li><li></li><li></li></ul>
+	</div>
+
+
+	<button>chinedu</button>
+	<button>joy</button>
+	<button>chinedu</button>
+	<button>joy</button>
+	<input type="text" name="te" class="te">
+
+
+	<form method="post" >
+		<input type="text" name="fname">
+		
+		
+		<div class="err">
+		</div>
+		<input type="submit" name="send" value="send" onclick="check();">
+	</form>
+	Your email please: <input type="email" id="input">
+
+<p id="error"></p>
+
+<script type="text/javascript">
+	input.onblur = function() {
+  if (!input.value.includes('@')) { // not email
+    input.classList.add('invalid');
+    error.innerHTML = 'Please enter a correct email.'
+  }
+};
+
+input.onfocus = function() {
+  if (this.classList.contains('invalid')) {
+    // remove the "error" indication, because the user wants to re-enter something
+    this.classList.remove('invalid');
+    error.innerHTML = "";
+  }
+};
+
+
+
+
+
+
+
+
+
+	const check=()=>{
+		let fname= document.querySelector('input[name="fname"]');
+
+		console.log(fname.value)
+	}
+	const yea=()=>{
+		let audio = new Audio('ACAPELA.mp3');
+		audio.play();
+	}
+
+	for (var i = 0; i < document.querySelectorAll('button').length; i++) {
+	
+			document.querySelectorAll('button')[i].addEventListener('click',yea);
+	}
+	document.addEventListener('keypress',(e)=>{
+		for(i=0;i<=9;i++){
+			if(e.key==i){
+				var text="";
+				text+=i;
+			document.querySelector('li').value=text;
+			//alert(text);
+		}
+
+		}
+
+		document.querySelector('.te').setAttribute('value',text)
+		
+
+	});
+	
+
+</script>
+</body>
+</html>
