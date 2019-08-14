@@ -575,24 +575,23 @@
 
 // console.log(Date.now)
 
-var arr=[];
-for (i = 1 ; i <=100; i++) {
+// fizz buzz challenge
+// var arr=[];
+// for (i = 1 ; i <=100; i++) {
 
-	if( i%3==0 && i%5==0){
-		arr.push("fizzbuzz");
+// 	if( i%3==0 && i%5==0){
+// 		arr.push("fizzbuzz");
 
-	}else if(i%5==0){
-		arr.push('buzz');
-	}else if(i%3==0){
-		arr.push("fiz")
-	}else{
-		arr.push(i);
-	}
-
-	
-}
-console.log(arr);
-var count=0;
+// 	}else if(i%5==0){
+// 		arr.push('buzz');
+// 	}else if(i%3==0){
+// 		arr.push("fiz")
+// 	}else{
+// 		arr.push(i);
+// 	}	
+// }
+// console.log(arr);
+// var count=0;
 // if(arr.length>0){
 // for (var j = 0; j <=arr.length; i++) {
 // 	if(arr[j]="fizzbuzz"){
@@ -612,14 +611,79 @@ console.log(arr1);
 //const reducer = (acc,val)=> acc+val;
 console.log([1,2,3].reduce((acc,val)=> acc+val)); //reduce implementation
 
-let strInclude = "chinedu";
+//working with include
+// let strInclude = "chinedu";
 
-const checkInclude = strToCheck =>{
-	if(strToCheck.includes("u")){
-		console.log("yes");
-	}else{
-		console.log("no");
+// const checkInclude = strToCheck =>{
+// 	if(strToCheck.includes("u")){
+// 		console.log("yes");
+// 	}else{
+// 		console.log("no");
+// 	}
+// };
+
+// checkInclude(strInclude);
+
+[1,2,3].forEach(x=>{
+	
+	console.log(x);
+});
+
+//working with map
+
+const arrMap =["KEN","BEN","Boot"];
+const mapArray = arrMap.map(x=>x.toLowerCase());
+console.log('mapAarry', mapArray);
+
+console.log(mapArray.map(x=>x.toUpperCase()));
+
+
+// tostring method and join;
+console.log(arrMap.join(''));
+
+
+// working with filter
+const arrFilter = [1,3,5,8,9,3,5,6,8];
+const filterArray =arrFilter.filter(x=>x%2==0);
+console.log("filteredArray", filterArray);
+
+
+// working with sort method
+const unSortedArray = [39,5,8,0,2,1,4,5,7];
+//const sortedAccending = unSortedArray.sort((a,b)=>a-b); // sorting accending
+const sortedDecending = unSortedArray.sort((a,b)=>b-a); // sorting desending
+//console.log("sorted accending", sortedAccending); 
+console.log("sortedDecending",sortedDecending);
+
+//sorting strings
+
+const strArray = ["ben", "bal", "zad", "man"];
+const sortedStrArray = strArray.sort();
+console.log("sortedStringArray", sortedStrArray);
+
+
+//working with array of object
+
+const arrOfObjects = [
+	{
+		name: "okoro",
+		age: 24,
+		isMarried: false
+	},
+	{
+		name: "chinedu",
+		age: 24,
+		isMarried: true
+	},
+	{
+		name: "ben",
+		age: 24,
+		isMarried: false
 	}
-};
+];
 
-checkInclude(strInclude);
+//printing all names
+arrOfObjects.forEach(x=>console.log(x.name));
+
+const addedOneToAge = arrOfObjects.map(x => x.age + 1);
+console.log("added one to age", addedOneToAge);
