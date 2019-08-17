@@ -683,7 +683,59 @@ const arrOfObjects = [
 ];
 
 //printing all names
-arrOfObjects.forEach(x=>console.log(x.name));
+arrOfObjects.forEach(x=>x.sex="male"); // added new property to each object in the array
+console.log(arrOfObjects);
+
+const filterUser = arrOfObjects.filter((x)=>x.name=="ben" && x.age==24);
+console.log("filtered user", filterUser);
 
 const addedOneToAge = arrOfObjects.map(x => x.age + 1);
 console.log("added one to age", addedOneToAge);
+
+
+// working with for -- in of object
+
+const forInObjcet =[{
+	name: "chinedu",
+	age: 3,
+	gender: "male"
+}];
+
+for(let property in forInObjcet){
+	console.log(forInObjcet[property].name);
+}
+
+// working with for.... of
+
+const forOfArray =["ben", true,2,{hobbies:["ball","game"]}];
+
+for(let item of forOfArray){
+	if(typeof(item)==="object") console.log(item);
+
+
+}
+const bj ={
+	name:"ben"
+};
+console.log(typeof(bj));
+//start with demo
+const startWithStr = "chinedu";
+
+if(startWithStr.startsWith("c")){
+	console.log(`${startWithStr} starts with c`)
+}else{
+	console.log("no");
+}
+
+//working with indexOf and lastIndexOf
+console.log("Chinedooooo".indexOf("o"));
+
+
+console.log("chinedu".replace("c","p"));
+
+//working with settimeout
+
+setTimeout(()=>console.log("hey this is setTimeout in action"),3000);
+
+///working with setInterval
+//setInterval(()=>console.log("working with set interval"),2000);
