@@ -612,17 +612,17 @@ console.log(arr1);
 console.log([1,2,3].reduce((acc,val)=> acc+val)); //reduce implementation
 
 //working with include
-// let strInclude = "chinedu";
+let strInclude = "chinedu";
 
-// const checkInclude = strToCheck =>{
-// 	if(strToCheck.includes("u")){
-// 		console.log("yes");
-// 	}else{
-// 		console.log("no");
-// 	}
-// };
+const checkInclude = strToCheck =>{
+	if(strToCheck.includes("u")){
+		console.log("yes");
+	}else{
+		console.log("no");
+	}
+};
 
-// checkInclude(strInclude);
+checkInclude(strInclude);
 
 [1,2,3].forEach(x=>{
 	
@@ -739,3 +739,47 @@ setTimeout(()=>console.log("hey this is setTimeout in action"),3000);
 
 ///working with setInterval
 //setInterval(()=>console.log("working with set interval"),2000);
+
+
+
+//working with typeof
+
+const typeofVal=2;
+console.log(typeof(typeofVal));
+
+// word sort
+
+const wordSort = (first,last,word) =>{
+	let arr =[first,last,word];
+	return arr.sort();
+};
+console.log(wordSort("apple", "banana", "azure"));
+
+
+//working with find method
+const findDemo =[
+	{
+		name:"chinedu",
+		age: 24,
+		isMarried: false,
+		hobbies:["programming","football","researching"]
+	},
+	{
+		name: "joy",
+		age: 20,
+		isMarried: true
+	}
+];
+
+const isFound =findDemo.find((x)=>{
+	if(x.name=="chinedu"){
+		for(let elem of x.hobbies){
+			//console.log(elem);
+			if(elem="programming"){
+				console.log(elem);
+			}
+		} 
+	}
+});
+
+
